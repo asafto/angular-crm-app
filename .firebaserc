@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "angular-crm-project": {
+      "hosting": {
+        "royalcrm": [
+          "angular-crm-project"
+        ]
+      }
+    }
+  }
+}
