@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 
 interface NavItem {
-  title: string
-  icon: string
-  link: string
+  title: string;
+  icon: string;
+  link: string;
 }
 
 @Component({
   selector: 'app-sidenav',
   templateUrl: './sidenav.component.html',
-  styleUrls: ['./sidenav.component.scss']
+  styleUrls: ['./sidenav.component.scss'],
 })
 export class SidenavComponent implements OnInit {
   navItems: NavItem[] = [
@@ -43,10 +43,8 @@ export class SidenavComponent implements OnInit {
       icon: 'fas fa-glass-cheers',
       link: 'yes',
     },
-  ]
-  constructor() { }
+  ];
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

@@ -1,10 +1,8 @@
-<app-page-header title="contacts" description="company employees details" icon="fas fa-users">
+<app-page-header title="contacts" description="customers contacts details" icon="fas fa-users">
 </app-page-header>
 <div class="row mt-3">
   <div class="col-12">
-    <h4>Company employees contacts table</h4>
-
-    <table *ngIf="contacts.length; else noContacts" class="table table-bordered mt-3">
+    <table *ngIf="contacts.length; else noContacts" class="table table-hover table-borderless table-dark mt-3">
       <thead>
         <tr>
           <th>No.</th>

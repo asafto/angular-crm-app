@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Customer } from '../../interfaces/customer';
-
+import { CustomersService } from '../../services/customers.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-new-customer',
   templateUrl: './new-customer.component.html',
-  styleUrls: ['./new-customer.component.scss']
+  styleUrls: ['./new-customer.component.scss'],
 })
 export class NewCustomerComponent implements OnInit {
-
-  constructor() { }
+  constructor(private customersService: CustomersService, private routerService: Router) {}
 
   form: Customer = {
     firstName: '',
@@ -18,27 +18,28 @@ export class NewCustomerComponent implements OnInit {
     email: '',
     phone: '',
     address: '',
-    notes: ''
+    notes: '',
   };
 
-  reset(form: NgForm){
+  reset(form: NgForm) {
     form.resetForm({
       firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    address: '',
-    notes: '',
-    })
+      lastName: '',
+      email: '',
+      phone: '',
+      address: '',
+      notes: '',
+    });
   }
 
-  onSubmit(form: NgForm) {
-    console.log(form.valid, form.value);
-    this.reset(form);
-    //TODO: create a document in db
+  async onSubmit(form: NgForm) {
+       //create a document in firestore database
+    if (form.valid) {
+      await this.customersService.add(form.value);
+      //rerouting to customers screen
+      this.routerService.navigate(['/customers']);
+    }
   }
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
