@@ -1,24 +1,25 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { CustomersService } from '../../services/customers.service'
+import { CustomersService } from '../../services/customers.service';
 import { Customer } from 'src/app/interfaces/customer';
-import { Subscription, Observable } from 'rxjs'
-import { tap } from 'rxjs/operators'
+import { Subscription, Observable } from 'rxjs';
+import { tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-customers',
   templateUrl: './customers.component.html',
-  styleUrls: ['./customers.component.scss']
+  styleUrls: ['./customers.component.scss'],
 })
 export class CustomersComponent /* implements OnInit, OnDestroy */ {
-
   // customersData: Customer[];
   // unSub: Subscription;
 
   customers$: Observable<Customer[]>;
+  term: string = '';
+
   constructor(private customersService: CustomersService) {
     this.customers$ = this.customersService.getAll();
   }
-  
+
   remove(id: string, e: MouseEvent) {
     e.preventDefault();
     if (confirm('Are you sure you would like to delete')) {
@@ -35,5 +36,4 @@ export class CustomersComponent /* implements OnInit, OnDestroy */ {
   // ngOnDestroy() {
   //   this.unSub.unsubscribe();
   // }
-
 }

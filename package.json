@@ -22,12 +22,12 @@
     "@angular/router": "~10.0.4",
     "@fortawesome/fontawesome-free": "^5.14.0",
     "bootstrap": "^4.5.0",
+    "firebase": "^7.22.1",
     "jquery": "^3.5.1",
     "popper.js": "^1.16.1",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",
-    "zone.js": "~0.10.3",
-    "firebase": "^7.13.1"
+    "zone.js": "~0.10.3"
   },
   "devDependencies": {
     "@angular-devkit/architect": ">= 0.900 < 0.1100",

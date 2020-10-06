@@ -18,6 +18,8 @@ import { CustomersComponent } from './components/customers/customers.component';
 import { environment } from '../environments/environment';
 import { CustomerDetailsComponent } from './components/customer-details/customer-details.component';
 import { CustomerEditComponent } from './components/customer-edit/customer-edit.component';
+import { FilterObjectArrayPipe } from './pipes/filter-object-array.pipe';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,8 @@ import { CustomerEditComponent } from './components/customer-edit/customer-edit.
     CustomersComponent,
     CustomerDetailsComponent,
     CustomerEditComponent,
+    FilterObjectArrayPipe,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
