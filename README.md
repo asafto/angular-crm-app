@@ -1,6 +1,7 @@
 # Royalcrm
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.3.
+Please note that this project works in front of Firebase Firestore db and Firebase Authentication service. The Implementation is only partial, as it is meant for learning Angular basic tools and capabilities.
 
 ## Development server
 
